@@ -10,12 +10,12 @@ function AllCountries({ inputValue, selectValue }) {
   const [error, setError] = useState(null);
   const { countries, setCountries } = useContext(MyContext);
 
-  console.log(selectValue);
+  // console.log(selectValue);
   // console.log(countries);
 
   const getAllCountries = () => {
     axios.get(`${BASE_URL}/all`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setCountries(res.data);
       setIsLoading(false);
     });
@@ -26,7 +26,7 @@ function AllCountries({ inputValue, selectValue }) {
       axios
         .get(`${BASE_URL}/name/${inputValue}`)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           setError(null);
           {
             setCountries(res.data);
@@ -48,7 +48,7 @@ function AllCountries({ inputValue, selectValue }) {
   const getByRegion = () => {
     if (selectValue) {
       axios.get(`${BASE_URL}/region/${selectValue}`).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setCountries(res.data);
       });
     }
@@ -57,7 +57,7 @@ function AllCountries({ inputValue, selectValue }) {
   useEffect(() => {
     getByRegion();
   }, [selectValue]);
-  console.log(countries);
+  // console.log(countries);
   if (error) return error.message;
   return (
     <>

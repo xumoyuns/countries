@@ -12,7 +12,7 @@ function SingleCountry() {
 
   const getByCountryName = () => {
     axios.get(`${BASE_URL}/name/${countryName}?fullText=true`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setSingleCountry(res.data);
     });
   };
@@ -20,7 +20,7 @@ function SingleCountry() {
     getByCountryName();
   }, []);
 
-  console.log(countryName);
+  // console.log(countryName);
 
   return (
     <div className="">
